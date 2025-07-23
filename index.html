@@ -2,11 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lilies for My Girlies</title>
-
-  <!-- Loader CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lilies - Elegant Kurtis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
   <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #fff5f7;
+      color: #333;
+    }
+
+    header {
+      background-color: #ffc0cb;
+      padding: 15px;
+      text-align: center;
+    }
+
+    header img {
+      max-height: 120px;
+    }
+
+    h1 {
+      margin: 10px 0;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 280px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .product-details {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .product-details h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .price {
+      color: #e91e63;
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .btn-order {
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-order:hover {
+      background: #e91e63;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #ffc0cb;
+      font-size: 14px;
+      margin-top: 30px;
+    }
+
     /* Loader styles */
     #loader {
       position: fixed;
@@ -14,38 +99,38 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: #fff;
+      background: white;
       z-index: 9999;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      font-family: sans-serif;
+      flex-direction: column;
     }
 
     #loader h2 {
       font-size: 22px;
-      margin-bottom: 20px;
       color: #444;
+      margin-bottom: 20px;
+      font-family: sans-serif;
     }
 
-    .loading-bar {
-      width: 200px;
-      height: 8px;
-      background-color: #eee;
-      border-radius: 20px;
+    .bar {
+      width: 150px;
+      height: 6px;
+      background: #eee;
       overflow: hidden;
+      border-radius: 10px;
       position: relative;
     }
 
-    .loading-bar::before {
+    .bar::before {
       content: "";
       position: absolute;
-      left: -40%;
+      left: -30%;
       width: 40%;
       height: 100%;
-      background-color: #f08080;
-      animation: slide 1.2s infinite ease-in-out;
+      background: #f08080;
+      animation: slide 1s infinite;
     }
 
     @keyframes slide {
@@ -60,107 +145,74 @@
       }
     }
 
-    #main-content {
+    body.loaded #loader {
       display: none;
     }
-  </style>
 
-  <!-- Your existing styles here -->
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fff7f0;
-    }
-
-    header {
-      background-color: #ffe6e6;
-      padding: 20px;
-      text-align: center;
-    }
-
-    header img {
-      width: 180px;
-    }
-
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 20px;
-      gap: 20px;
-    }
-
-    .product {
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 15px;
-      width: 200px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease;
-    }
-
-    .product:hover {
-      transform: scale(1.05);
-    }
-
-    .product img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .product h3 {
-      font-size: 18px;
-      margin: 10px 0 5px;
-    }
-
-    .product p {
-      margin: 0;
-      color: #888;
+    body:not(.loaded) #main-content {
+      display: none;
     }
   </style>
 </head>
 <body>
-
   <!-- Loader -->
   <div id="loader">
     <h2>Struggling to find elegant kurtis?</h2>
-    <div class="loading-bar"></div>
+    <div class="bar"></div>
   </div>
 
-  <!-- Main Website Content -->
+  <!-- Main content starts -->
   <div id="main-content">
     <header>
-      <img src="https://github.com/Rick-byte29/Lilies/blob/main/LILIES%20FOR%20MY%20GIRLIES.png?raw=true" alt="Lilies Logo" />
+      <img src="https://github.com/Rick-byte29/Lilies/blob/main/LILIES%20FOR%20MY%20GIRLIES.png?raw=true" alt="Lilies Logo">
+      <h1>Lilies - For My Girlies</h1>
     </header>
 
     <section class="products">
-      <!-- Sample products (replace images later) -->
       <div class="product">
-        <img src="https://via.placeholder.com/200x250.png?text=Kurti+1" alt="Kurti 1" />
-        <h3>Elegant Peach Kurti</h3>
-        <p>₹799</p>
+        <img src="https://via.placeholder.com/300x400?text=Kurti+1" alt="Kurti 1">
+        <div class="product-details">
+          <h3>Elegant Peach Kurti</h3>
+          <p class="price">₹799</p>
+          <button class="btn-order" onclick="showPayment()">Order Now</button>
+        </div>
       </div>
       <div class="product">
-        <img src="https://via.placeholder.com/200x250.png?text=Kurti+2" alt="Kurti 2" />
-        <h3>Floral Print Kurti</h3>
-        <p>₹899</p>
+        <img src="https://via.placeholder.com/300x400?text=Kurti+2" alt="Kurti 2">
+        <div class="product-details">
+          <h3>Pastel Blue Kurti</h3>
+          <p class="price">₹899</p>
+          <button class="btn-order" onclick="showPayment()">Order Now</button>
+        </div>
       </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/200x250.png?text=Kurti+3" alt="Kurti 3" />
-        <h3>Pastel Green Kurti</h3>
-        <p>₹749</p>
-      </div>
+      <!-- Add more products here -->
     </section>
+
+    <section style="text-align:center; padding: 20px;" id="payment" hidden>
+      <h2>Payment Options</h2>
+      <p><strong>UPI ID:</strong> lilies@upi</p>
+      <p>After payment, share the screenshot on WhatsApp: <a href="https://wa.me/919999999999" target="_blank">Click here</a></p>
+      <p><strong>Cash on Delivery:</strong> Available (₹50 extra)</p>
+    </section>
+
+    <footer>
+      &copy; 2025 Lilies. All rights reserved.
+    </footer>
   </div>
 
-  <!-- Loader Script -->
   <script>
+    function showPayment() {
+      document.getElementById('payment').hidden = false;
+      window.scrollTo({
+        top: document.getElementById('payment').offsetTop,
+        behavior: 'smooth'
+      });
+    }
+
     window.addEventListener("load", function () {
       setTimeout(function () {
-        document.getElementById("loader").style.display = "none";
-        document.getElementById("main-content").style.display = "block";
-      }, 5000); // 5 seconds delay
+        document.body.classList.add("loaded");
+      }, 5000); // 5 seconds loader
     });
   </script>
 </body>
