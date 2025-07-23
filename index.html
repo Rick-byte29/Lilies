@@ -186,6 +186,71 @@
 </head>
 <body>
 
+  <!-- Loader Start -->
+<div id="loader">
+  <div class="loader-text">
+    <p>Still struggling to find elegant Kurtis that feel <em>you</em>?</p>
+    <span>Hang tight, we’ve got something special...</span>
+  </div>
+</div>
+<!-- Loader End -->
+
+<style>
+  #loader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #fff8f3;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Playfair Display', serif;
+    animation: fadeOut 0.5s ease 2s forwards;
+  }
+
+  .loader-text {
+    text-align: center;
+    padding: 1rem;
+    animation: zoomIn 1s ease;
+  }
+
+  .loader-text p {
+    font-size: 1.5rem;
+    color: #b03e66;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .loader-text span {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @keyframes zoomIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+</style>
+
+<script>
+  // Optional: Remove loader after delay
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      document.getElementById("loader").style.display = "none";
+    }, 2500); // matches fadeOut duration
+  });
+</script>
+
+
 <header style="text-align: center; padding: 3rem 1rem;">
   <img 
     src="https://github.com/Rick-byte29/Lilies/blob/main/LILIES%20FOR%20MY%20GIRLIES.png?raw=true" 
