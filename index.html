@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Lilies | Elegant Kurtis</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lilies - Elegant Kurtis for You</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
+  
+  <!-- Loader styles -->
   <style>
+    /* Loader */
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
       opacity: 0;
       transition: opacity 1s ease;
       overflow: hidden;
     }
-
     body.loaded {
       opacity: 1;
       overflow: auto;
     }
-
     #page-loader {
       position: fixed;
       top: 0;
@@ -32,9 +31,9 @@
       justify-content: center;
       align-items: center;
       font-size: 1.5rem;
-      color: #333;
+      color: #b03e66;
+      font-family: 'Playfair Display', serif;
     }
-
     .loading-bar {
       width: 70%;
       height: 8px;
@@ -43,42 +42,208 @@
       overflow: hidden;
       border-radius: 10px;
     }
-
     .loading-fill {
       width: 0%;
       height: 100%;
-      background: #ff69b4;
+      background: #b03e66;
       animation: loadAnim 5s linear forwards;
     }
-
     @keyframes loadAnim {
-      0% {
-        width: 0%;
-      }
-      100% {
-        width: 100%;
-      }
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+
+    /* Existing styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fff8f3;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 1px solid #e2e2e2;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #b03e66;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #666;
+    }
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      color: #b03e66;
+    }
+    .hero p {
+      font-size: 1rem;
+      color: #777;
+      margin-top: 0.5rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+    .gallery img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .about {
+      padding: 2rem;
+      background-color: #fff;
+      text-align: center;
+    }
+    .about h3 {
+      font-size: 1.8rem;
+      color: #b03e66;
+    }
+    .about p {
+      max-width: 700px;
+      margin: 1rem auto;
+      color: #555;
+    }
+    .categories {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .categories h3 {
+      color: #b03e66;
+      font-size: 1.5rem;
+    }
+    .categories ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+    }
+    .categories li {
+      display: inline-block;
+      background: #ffe1e9;
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      color: #b03e66;
+    }
+    .contact {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #fafafa;
+    }
+    .contact h4 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #b03e66;
+    }
+    .contact a {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background-color: #b03e66;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .contact a:hover {
+      background-color: #8e2c50;
+    }
+    .payment {
+      padding: 2rem;
+      background-color: #fff8f3;
+      text-align: center;
+    }
+    .payment h3 {
+      color: #b03e66;
+      font-size: 1.8rem;
+    }
+    .payment p {
+      margin: 0.5rem 0 1.5rem;
+      color: #555;
+    }
+    .payment-options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .payment-box {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .payment-box h4 {
+      color: #333;
+    }
+    .payment-box img {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    .payment-box p {
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+    .payment-box a {
+      margin-top: 1rem;
+      display: inline-block;
+      background: #b03e66;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      text-decoration: none;
+    }
+    .payment-box a:hover {
+      background: #8e2c50;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #fff;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      .hero h2 { font-size: 1.5rem; }
     }
   </style>
 </head>
-
 <body>
 
+  <!-- Loader -->
   <div id="page-loader">
-  <div>Struggling to find elegant kurtis?</div>
-  <div class="loading-bar"><div class="loading-fill"></div></div>
-</div>
+    <div>Struggling to find elegant kurtis?</div>
+    <div class="loading-bar"><div class="loading-fill"></div></div>
+  </div>
 
-  
-  <header style="text-align: center; padding: 3rem 1rem;">
-  <img 
-    src="https://github.com/Rick-byte29/Lilies/blob/main/LILIES%20FOR%20MY%20GIRLIES.png?raw=true" 
-    alt="Lilies Logo" 
-    style="width: 280px; max-width: 90%; height: auto; margin-bottom: 1rem;" 
-  />
-  <h1 style="font-size: 2.2rem; color: #b03e66; margin-top: 0.5rem;">Lilies</h1>
-  <p style="font-size: 1.1rem; color: #666;">Elegant Kurtis | Modern Ethnic Wear</p>
-</header>
+  <header>
+    <h1>Lilies</h1>
+    <p>Elegant Kurtis | Modern Ethnic Wear</p>
+  </header>
 
   <section class="hero">
     <h2>Step Into Style with Lilies</h2>
@@ -141,13 +306,13 @@
     © 2025 Lilies. All rights reserved.
   </footer>
 
-<script>
-  setTimeout(function () {
-    document.getElementById("page-loader").style.display = "none";
-    document.body.classList.add("loaded");
-  }, 5000);
-</script>
+  <!-- Loader Script -->
+  <script>
+    setTimeout(function () {
+      document.getElementById("page-loader").style.display = "none";
+      document.body.classList.add("loaded");
+    }, 5000);
+  </script>
 
-  
 </body>
 </html>
